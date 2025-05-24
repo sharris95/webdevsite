@@ -2,7 +2,6 @@
 const totalPhotos = 19;
 const preloadedPhotos = [];
 
-// preload
 for (let i = 1; i <= totalPhotos; i++) {
   const img = new Image();
   img.src = `images/photo${i}.jpg`;
@@ -10,7 +9,7 @@ for (let i = 1; i <= totalPhotos; i++) {
 }
 
 let currentIndex = 0;
-const randomPhoto   = document.getElementById('random-photo');
+const randomPhoto = document.getElementById('random-photo');
 const photoContainer = document.getElementById('photo-container');
 
 function showPhoto(idx) {
@@ -19,10 +18,8 @@ function showPhoto(idx) {
   }
 }
 
-// first display
 showPhoto(currentIndex);
 
-// cycle on click
 photoContainer.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % totalPhotos;
   showPhoto(currentIndex);
