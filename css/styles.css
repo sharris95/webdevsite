@@ -1,4 +1,6 @@
-/* 1. Define your JetBrains Mono font faces (if hosting locally) */
+/* styles.css */
+
+/* 1. JetBrains Mono font faces */
 @font-face {
   font-family: "JetBrains Mono";
   src: url("../fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
@@ -6,7 +8,6 @@
   font-weight: 400;
   font-style: normal;
 }
-
 @font-face {
   font-family: "JetBrains Mono";
   src: url("../fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
@@ -20,32 +21,30 @@
   --gray0: #16171E;
   --gray1: #191B24;
   --gray2: #342E38;
-  --gray3: #4F4756;
+  --gray3: #4F4756; /* lighter-purple behind photos */
   --gray4: #81738C;
   --gray5: #A798B3;
   --gray6: #D5CADE;
   --gray7: #E7DBF0;
 }
 
-/* 3. Global body styling */
+/* 3. Global */
 body {
   margin: 0;
   padding: 0;
   background: var(--gray0);
   color: var(--gray7);
   font-family: "JetBrains Mono", monospace;
-  font-size: 16px; /* Keeps text at a comfortable reading size */
+  font-size: 16px;
   line-height: 1.5;
 }
-
-/* 4. Remove large headings by styling them like normal text (optional) */
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
   font-size: inherit;
   font-weight: normal;
   margin: 0;
 }
 
-/* 5. The grid layout */
+/* 4. Grid layout */
 .grid-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -56,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
 }
 
-/* 6. Main content (left column, spans both rows) */
+/* 5. Left column */
 .main-content {
   grid-row: 1 / 3;
   background: var(--gray1);
@@ -64,44 +63,46 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 8px;
 }
 
-/* 7. Top-right and bottom-right sections */
+/* 6. Top-right */
 .top-right {
   background: var(--gray2);
   border-radius: 8px;
   padding: 15px;
 }
 
+/* 7. Bottom-right as two-row grid */
 .bottom-right {
-  /* Keep a fixed height so the box doesn't grow/shrink */
-  height: 350px;
-  background: var(--gray3);
+  background: var(--gray2);
   border-radius: 8px;
   padding: 15px;
-  cursor: pointer;
+  height: 350px;
+  box-sizing: border-box;
 
-  /* Use flex to position the text at the top, image below */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center horizontally */
-  /* no 'justify-content: center' so the top text doesn't shift down */
-  overflow: hidden; /* hide any overflow if the image is large */
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
 }
 
-/* Title pinned at the top */
+/* title spacing */
 .bottom-right .title {
-  margin: 0;           /* remove default paragraph margin */
-  margin-bottom: 10px; /* add a little space below the text */
+  margin: 0;
+  font-size: 1em;
 }
 
-/* The image sits below the text, scaled to fit */
-.bottom-right img {
+/* wrapper that fills all leftover space */
+.photo-wrapper {
+  background: var(--gray3);
+  border-radius: 5px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* image sizing */
+.photo-wrapper img {
   max-width: 80%;
   max-height: 80%;
   object-fit: contain;
-  border-radius: 5px;
-
-  /* optional: push the image to the middle if you want more space 
-     between the title and the image */
-  margin-top: auto;
-  margin-bottom: auto;
 }

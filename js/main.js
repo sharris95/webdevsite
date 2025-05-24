@@ -1,3 +1,5 @@
+// main.js
+
 // Total number of photos
 const totalPhotos = 19;
 const preloadedPhotos = [];
@@ -5,7 +7,7 @@ const preloadedPhotos = [];
 // Preload images named photo1.jpg to photo19.jpg
 for (let i = 1; i <= totalPhotos; i++) {
   const img = new Image();
-  img.src = `images/photo${i}.jpg`; // Corrected path
+  img.src = `images/photo${i}.jpg`;
   preloadedPhotos.push(img);
 }
 
