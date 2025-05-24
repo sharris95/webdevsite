@@ -5,7 +5,7 @@ const preloadedPhotos = [];
 // Preload images named photo1.jpg to photo19.jpg
 for (let i = 1; i <= totalPhotos; i++) {
   const img = new Image();
-  img.src = `../images/photo${i}.jpg`;
+  img.src = `images/photo${i}.jpg`; // Corrected path
   preloadedPhotos.push(img);
 }
 
@@ -18,7 +18,11 @@ const photoContainer = document.getElementById('photo-container');
 
 // Show the current photo
 function showPhoto(index) {
-  randomPhoto.src = preloadedPhotos[index].src;
+  if (preloadedPhotos[index]) {
+    randomPhoto.src = preloadedPhotos[index].src;
+  } else {
+    console.error(`Image at index ${index} not found.`);
+  }
 }
 
 // Display the first image right away
