@@ -1,10 +1,8 @@
 // main.js
-
-// how many photos you have
 const totalPhotos = 19;
 const preloadedPhotos = [];
 
-// preload them
+// preload
 for (let i = 1; i <= totalPhotos; i++) {
   const img = new Image();
   img.src = `images/photo${i}.jpg`;
@@ -12,18 +10,16 @@ for (let i = 1; i <= totalPhotos; i++) {
 }
 
 let currentIndex = 0;
-const randomPhoto = document.getElementById('random-photo');
+const randomPhoto   = document.getElementById('random-photo');
 const photoContainer = document.getElementById('photo-container');
 
-function showPhoto(index) {
-  if (preloadedPhotos[index]) {
-    randomPhoto.src = preloadedPhotos[index].src;
-  } else {
-    console.error(`No image at index ${index}`);
+function showPhoto(idx) {
+  if (preloadedPhotos[idx]) {
+    randomPhoto.src = preloadedPhotos[idx].src;
   }
 }
 
-// first shot
+// first display
 showPhoto(currentIndex);
 
 // cycle on click
