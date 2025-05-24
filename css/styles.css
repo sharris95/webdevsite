@@ -5,15 +5,13 @@
   font-family: "JetBrains Mono";
   src: url("../fonts/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
        url("../fonts/JetBrainsMono/JetBrainsMono-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+  font-weight: 400; font-style: normal;
 }
 @font-face {
   font-family: "JetBrains Mono";
   src: url("../fonts/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
        url("../fonts/JetBrainsMono/JetBrainsMono-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 400; font-style: italic;
 }
 
 /* 2. Color variables */
@@ -21,14 +19,14 @@
   --gray0: #16171E;
   --gray1: #191B24;
   --gray2: #342E38;
-  --gray3: #4F4756; /* lighter-purple behind photos */
+  --gray3: #4F4756; /* the lighter-purple you wanted everywhere */
   --gray4: #81738C;
   --gray5: #A798B3;
   --gray6: #D5CADE;
   --gray7: #E7DBF0;
 }
 
-/* 3. Global */
+/* 3. Global reset + typography */
 body {
   margin: 0;
   padding: 0;
@@ -66,16 +64,15 @@ h1,h2,h3,h4,h5,h6 {
 /* 6. Top-right */
 .top-right {
   background: var(--gray2);
-  border-radius: 8px;
   padding: 15px;
+  border-radius: 8px;
 }
 
-/* 7. Bottom-right as two-row grid */
+/* 7. Bottom-right: now stretches to fill its grid cell */
 .bottom-right {
-  background: var(--gray2);
-  border-radius: 8px;
+  background: var(--gray3);
   padding: 15px;
-  height: 350px;
+  border-radius: 8px;
   box-sizing: border-box;
 
   display: grid;
@@ -83,24 +80,24 @@ h1,h2,h3,h4,h5,h6 {
   gap: 10px;
 }
 
-/* title spacing */
+/* title at top */
 .bottom-right .title {
   margin: 0;
   font-size: 1em;
 }
 
-/* wrapper that fills all leftover space */
+/* wrapper fills all remaining space */
 .photo-wrapper {
   background: var(--gray3);
   border-radius: 5px;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* image sizing */
+/* image stays centered/scaled */
 .photo-wrapper img {
   max-width: 80%;
   max-height: 80%;
