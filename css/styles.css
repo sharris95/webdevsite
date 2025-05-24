@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 .bottom-right {
   /* Keep a fixed height so the box doesn't grow/shrink */
   height: 350px;
-  background: var(--gray2);
+  background: var(--gray3);
   border-radius: 8px;
   padding: 15px;
   cursor: pointer;
