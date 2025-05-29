@@ -1,4 +1,5 @@
 // main.js
+
 const totalPhotos = 19;
 const preloadedPhotos = [];
 
@@ -20,6 +21,7 @@ function showPhoto(idx) {
 
 showPhoto(currentIndex);
 
+// click to cycle through photos
 photoContainer.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % totalPhotos;
   showPhoto(currentIndex);
