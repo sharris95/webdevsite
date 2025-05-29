@@ -1,6 +1,4 @@
-/* styles.css */
-
-/* 1. Font faces */
+/* Font faces */
 @font-face {
   font-family: "JetBrains Mono";
   src:
@@ -18,7 +16,7 @@
   font-style: italic;
 }
 
-/* 2. Color variables */
+/* Color variables */
 :root {
   --gray0:  #16171E;
   --gray1:  #191B24;
@@ -28,10 +26,10 @@
   --gray5:  #A798B3;
   --gray6:  #D5CADE;
   --gray7:  #E7DBF0;
-  --accent: #E07A5F;
+  --accent:#E07A5F;
 }
 
-/* 3. Global reset + noise overlay */
+/* Reset & background noise */
 body {
   margin: 0;
   padding: 0;
@@ -52,12 +50,12 @@ body::before {
   pointer-events: none;
 }
 
-/* paragraphs */
+/* Paragraph spacing */
 p {
-  margin: 0;
+  margin: 0 0 1rem;
 }
 
-/* 4. Grid layout */
+/* Grid layout */
 .grid-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -68,7 +66,7 @@ p {
   box-sizing: border-box;
 }
 
-/* 5. Main column + divider */
+/* Main content area */
 .main-content {
   grid-row: 1 / 3;
   background: var(--gray1);
@@ -80,27 +78,33 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* 6. Notes card */
+/* Notes card (top-right) */
 .top-right {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 15px 4rem;
   background: var(--gray2);
-  padding: 20px 15px;
   border-radius: 8px;
 }
 .notes-title {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   color: var(--accent);
 }
 .top-right p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .divider {
-  font-family: monospace;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
   opacity: 0.3;
-  margin: 1rem 0;
-  white-space: pre-wrap;
+  white-space: pre;
+  pointer-events: none;
 }
 
-/* 7. Photo card */
+/* Photo card (bottom-right) */
 .bottom-right {
   background: var(--gray3);
   padding: 20px 15px;
